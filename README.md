@@ -56,8 +56,8 @@ Desde un IDE:
 
 ### **Respuestas**
 
-- 201 Created (Registro exitoso):
-{
+- **201 Created (Registro exitoso):**
+    - {
     "id": "3ddcd3aa-d2f3-41b7-9f1c-d6c4f18100ee",
     "nombre": "Sancho Panza",
     "email": "sapa@testsermaluc.cl",
@@ -77,12 +77,12 @@ Desde un IDE:
     ]
 }
 
-- 400 Bad Request (Errores de validación):
-{
+- **400 Bad Request (Errores de validación):**
+    - {
   "mensaje": "El correo ya registrado"
 }
 
-{
+    - {
   "mensaje": "La contraseña no cumple con el formato requerido"
 }
 
@@ -99,13 +99,13 @@ La aplicación utiliza una base de datos en memoria H2. Puedes acceder a la cons
         SELECT * FROM TELEFONO;
 
 ### **Diagrama de la solución**
-
+```mermaid
 flowchart TD
     A[Cliente] --> B[Controlador - UserController] 
     B --> C[Servicio - UserService] 
     C --> D[Repositorio - UserRepository] 
     D --> E[Base de datos - H2 ]
-
+```
 - Cliente: Envía solicitudes HTTP a la API.
 - Controlador: Maneja las solicitudes y delega la lógica al servicio.
 - Servicio: Contiene la lógica de negocio, como validaciones y generación de tokens.
